@@ -1,0 +1,221 @@
+<%{
+	dataRec = Description_Database[ID != null];
+	cateogtylist = List();
+	for each  data in dataRec
+	{
+		cateogtylist.add(data.Category);
+	}
+	disCateogtylist = cateogtylist.distinct();
+	//
+	allList = "";
+	for each  rec in disCateogtylist
+	{
+		firstText = '<details> <summary>' + rec + '</summary> <ul class="sub-list">';
+		mainlist = thisapp.NevlistHtml(rec,"");
+		lastText = '</ul></details>';
+		allList = allList + firstText + mainlist + lastText;
+	}
+	//mPlusList = thisapp.NevlistHtml("mPlus","");
+	%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+	<style>
+        body {
+            background-color: #f7f9fc;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        .headdingh1 {
+            font-size: 24px;
+            color: #007BFF;
+            margin-bottom: 16px;
+            position: relative;
+            padding-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .headdingh1::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #007BFF;
+            border-radius: 2px;
+        }
+
+        .whole_container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .list-container {
+            background-color: white;
+            border-radius: 6px;
+            padding: 12px;
+
+        }
+
+        details {
+            margin-bottom: 10px;
+            background-color: white;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        summary {
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+            padding: 8px 12px;
+            background-color: #007BFF;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+
+        details[open] > summary {
+            background-color: #d6e9ff;
+            color: #007BFF;
+        }
+
+        details summary::marker {
+            color: white;
+        }
+
+        details[open] summary::marker {
+            color: #007BFF;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+            margin: 8px 0 6px 0;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: #007BFF ;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .embedstyle {
+            width: 100%;
+            height: 540px;
+            border: none;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+<%
+	text1 = thisapp.GetSearchData("1","Description");
+	text2 = thisapp.GetSearchData("2","Description");
+	text3 = thisapp.GetSearchData("3","Description");
+	text4 = thisapp.GetSearchData("4","Description");
+	text5 = thisapp.GetSearchData("5","Description");
+	text6 = thisapp.GetSearchData("6","Description");
+	text7 = thisapp.GetSearchData("7","Description");
+	text8 = thisapp.GetSearchData("8","Description");
+	text9 = thisapp.GetSearchData("9","Description");
+	text10 = thisapp.GetSearchData("10","Description");
+	text11 = thisapp.GetSearchData("11","Description");
+	text12 = thisapp.GetSearchData("12","Description");
+	text13 = thisapp.GetSearchData("13","Description");
+	text14 = thisapp.GetSearchData("14","Description");
+	text15 = thisapp.GetSearchData("15","Description");
+	text16 = thisapp.GetSearchData("16","Description");
+	text17 = thisapp.GetSearchData("17","Description");
+	text18 = thisapp.GetSearchData("18","Description");
+	text19 = thisapp.GetSearchData("19","Description");
+	text20 = thisapp.GetSearchData("20","Description");
+	text21 = thisapp.GetSearchData("21","Description");
+	text22 = thisapp.GetSearchData("22","Description");
+	text23 = thisapp.GetSearchData("23","Description");
+	text24 = thisapp.GetSearchData("24","Description");
+	text25 = thisapp.GetSearchData("25","Description");
+	text26 = thisapp.GetSearchData("26","Description");
+	text27 = thisapp.GetSearchData("27","Description");
+	text28 = thisapp.GetSearchData("28","Description");
+	text29 = thisapp.GetSearchData("29","Description");
+	text30 = thisapp.GetSearchData("30","Description");
+	text31 = thisapp.GetSearchData("31","Description");
+	text32 = thisapp.GetSearchData("32","Description");
+	text33 = thisapp.GetSearchData("33","Description");
+	text34 = thisapp.GetSearchData("34","Description");
+	text35 = thisapp.GetSearchData("35","Description");
+	text36 = thisapp.GetSearchData("36","Description");
+	text37 = thisapp.GetSearchData("37","Description");
+	text38 = thisapp.GetSearchData("38","Description");
+	text39 = thisapp.GetSearchData("39","Description");
+	text40 = thisapp.GetSearchData("40","Description");
+	text41 = thisapp.GetSearchData("41","Description");
+	text42 = thisapp.GetSearchData("42","Description");
+	text43 = thisapp.GetSearchData("43","Description");
+	text44 = thisapp.GetSearchData("44","Description");
+	text45 = thisapp.GetSearchData("45","Description");
+	text46 = thisapp.GetSearchData("46","Description");
+	text47 = thisapp.GetSearchData("47","Description");
+	text48 = thisapp.GetSearchData("48","Description");
+	text49 = thisapp.GetSearchData("49","Description");
+	text50 = thisapp.GetSearchData("50","Description");
+	text51 = thisapp.GetSearchData("51","Description");
+	text52 = thisapp.GetSearchData("52","Description");
+	text53 = thisapp.GetSearchData("53","Description");
+	text54 = thisapp.GetSearchData("54","Description");
+	text55 = thisapp.GetSearchData("55","Description");
+	text56 = thisapp.GetSearchData("56","Description");
+	text57 = thisapp.GetSearchData("57","Description");
+	text58 = thisapp.GetSearchData("58","Description");
+	text59 = thisapp.GetSearchData("59","Description");
+	text60 = thisapp.GetSearchData("60","Description");
+	text61 = thisapp.GetSearchData("61","Description");
+	text62 = thisapp.GetSearchData("62","Description");
+	text63 = thisapp.GetSearchData("63","Description");
+	text64 = thisapp.GetSearchData("64","Description");
+	text65 = thisapp.GetSearchData("65","Description");
+	text66 = thisapp.GetSearchData("66","Description");
+	text67 = thisapp.GetSearchData("67","Description");
+	text68 = thisapp.GetSearchData("68","Description");
+	text69 = thisapp.GetSearchData("69","Description");
+	text70 = thisapp.GetSearchData("70","Description");
+	text71 = thisapp.GetSearchData("71","Description");
+	text72 = thisapp.GetSearchData("72","Description");
+	text73 = thisapp.GetSearchData("73","Description");
+	text74 = thisapp.GetSearchData("74","Description");
+	text75 = thisapp.GetSearchData("75","Description");
+	text76 = thisapp.GetSearchData("76","Description");
+	text77 = thisapp.GetSearchData("77","Description");
+	text78 = thisapp.GetSearchData("78","Description");
+	text79 = thisapp.GetSearchData("79","Description");
+	text80 = thisapp.GetSearchData("80","Description");
+	text81 = thisapp.GetSearchData("81","Description");
+	text82 = thisapp.GetSearchData("82","Description");
+	%>
+<div class="list-container"> 
+<h1 class="headdingh1">Service list</h1>
+	<h2><%=input.pname%></h2>
+    <div class="list-container">
+                <%=allList%>
+    </div>
+</body>
+</html>
+<%
+
+}%>

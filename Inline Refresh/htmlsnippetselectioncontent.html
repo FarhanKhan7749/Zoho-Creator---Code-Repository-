@@ -1,0 +1,236 @@
+<%{
+	if(input.recordId == null || input.recordId == "")
+	{
+		//selectedRec = Description_Database[ID == 4251751000030615262];
+		description = "";
+		inputs = "";
+		output = "";
+		cost = "";
+		faqs = "";
+		timeline = "";
+		process = "";
+		coustomerjourney = "";
+		valueProposition = "";
+	}
+	else
+	{
+		actRecId = input.recordId.toNumber();
+		selectedRec = Description_Database[ID == actRecId];
+		description = selectedRec.Description;
+		inputs = selectedRec.Inputs;
+		output = selectedRec.Output;
+		cost = selectedRec.Cost;
+		faqs = selectedRec.FAQs;
+		timeline = selectedRec.Timeline;
+		process = selectedRec.Process_Steps_to_Apply;
+		coustomerjourney = selectedRec.Customer_Journey;
+		valueProposition = selectedRec.Value_Proposition;
+	}
+	%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Description</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .maincontainer {
+            margin: 50px;
+            background-color: white;
+            color: #333;
+			height: 72vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+			height: 100%;
+        }
+        
+        .service-header {
+            margin-bottom: 20px;
+        }
+        
+        .service-header h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .service-header h2 {
+            color: #3498db;
+            margin-top: 0;
+            font-weight: normal;
+        }
+        
+        .service-path {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .service-tags {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tag {
+            background-color: #e0f7fa;
+            color: #00838f;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        
+        .divider {
+            border: none;
+            height: 1px;
+            background-color: #ecf0f1;
+            margin: 20px 0;
+        }
+        
+        /* Tab system */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            font-family: sans-serif;
+            background: white;
+            overflow: hidden;
+        }
+        
+        .tabs__label {
+            padding: 15px 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tabs__radio {
+            display: none;
+        }
+        
+        .tabs__content {
+            order: 1;
+            width: 100%;
+            line-height: 1.6;
+            color: #34495e;
+            display: none;
+            padding: 25px;
+            background: white;
+        }
+        
+        .tabs__radio:checked + .tabs__label {
+            font-weight: bold;
+            color: #3498db;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .tabs__radio:checked + .tabs__label + .tabs__content {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                margin: 20px;
+            }
+            
+            .tabs__label {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            
+            .tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap;
+            }
+        }
+    </style>
+</head>
+<div class="maincontainer">
+      <!-- Tab system -->
+        <div class="tabs">
+            <!-- Description tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab1" checked>
+            <label for="tab1" class="tabs__label">Description</label>
+            <div class="tabs__content">
+                <h3>Description</h3>
+                <p><%=description%></p>
+            </div>
+            
+            <!-- Inputs tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab2">
+            <label for="tab2" class="tabs__label">Inputs</label>
+            <div class="tabs__content">
+                <h3>Inputs</h3>
+                <p><%=inputs%></p>
+            </div>
+            
+            <!-- Output tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab3">
+            <label for="tab3" class="tabs__label">Output</label>
+            <div class="tabs__content">
+                <h3>Output</h3>
+                <p><%=output%></p>
+            </div>
+            
+            <!-- Cost tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab4">
+            <label for="tab4" class="tabs__label">Cost</label>
+            <div class="tabs__content">
+                <h3>Cost</h3>
+                <p><%=cost%></p>
+            </div>
+            
+            <!-- FAQs tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab5">
+            <label for="tab5" class="tabs__label">FAQs</label>
+            <div class="tabs__content">
+                <h3>FAQs</h3>
+                <p><%=faqs%></p>
+            </div>
+            
+            <!-- Timeline tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab6">
+            <label for="tab6" class="tabs__label">Timeline</label>
+            <div class="tabs__content">
+                <h3>Timeline</h3>
+                <p><%=timeline%></p>
+            </div>
+            
+            <!-- Process tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab7">
+            <label for="tab7" class="tabs__label">Process</label>
+            <div class="tabs__content">
+                <h3>Process</h3>
+                <p><%=process%></p>
+            </div>
+            
+            <!-- Customer Journey tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab8">
+            <label for="tab8" class="tabs__label">Customer Journey</label>
+            <div class="tabs__content">
+                <h3>Customer Journey</h3>
+                <p><%=coustomerjourney%></p>
+            </div>
+            
+            <!-- Value Proposition tab -->
+            <input type="radio" class="tabs__radio" name="service-tabs" id="tab9">
+            <label for="tab9" class="tabs__label">Value Proposition</label>
+            <div class="tabs__content">
+                <h3>Value Proposition</h3>
+                <p><%=valueProposition%></p>
+            </div>
+        </div>
+    </div>
+</div>
+</html>
+<%
+
+}%>
